@@ -1,0 +1,15 @@
+# 顶部导航栏。name 是显示文字，url 对应 content/_index.md 中的栏目 id。
+# weight 数字越小，菜单越靠前。
+main:
+  - name: About
+    url: /#about
+    weight: 10
+  - name: Research
+    url: /#research
+    weight: 20
+  - name: Publications
+    url: /#papers
+    weight: 30
+  - name: Projects
+    url: /#projects
+    weight: 40

@@ -1,0 +1,38 @@
+schema: hugoblox/author/v1
+slug: me
+is_owner: true
+
+# 个人资料编辑区：姓名、职称、简介、单位、联系方式和研究方向都在此修改。
+
+name:
+  display: Zhao Zhang
+  given: ''
+  family: ''
+  alternate: ''
+  pronunciation: ''
+  pronouns: ''
+
+role: zhangzhao@uestc.edu.cn
+
+
+
+bio: I received my Ph.D degree from University of Electronic Science and Technology of China (UESTC) under the supervision of Prof. Chunxiang Xu. During my doctoral studies, I received the UESTC Outstanding Student Award. I also completed a one-year research visit at The Hong Kong Polytechnic University, hosted by Prof. Man Ho Allen Au. In recent years, my research has been published in leading cybersecurity journals, including IEEE TIFS, IEEE TDSC, and IEEE TMC. I have led or contributed to several national research projects supported by the National Key R&D Program of China and the National Natural Science Foundation of China.
+  
+
+affiliations:
+  - name: School of Computer Science and Engineering, University of Electronic Science and Technology of China
+    url: https://www.uestc.edu.cn/
+
+links: 
+# 以后可在 links 中添加邮箱、Google Scholar、ORCID 和 GitHub。
+
+interests:
+  - Applied cryptography
+  - Privacy preservation
+  - Distributed network security
+
+education: []
+experience: []
+skills: []
+languages: []
+awards: []

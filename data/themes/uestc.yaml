@@ -1,0 +1,43 @@
+# 网站配色文件
+# 只需修改下面的十六进制颜色值，例如 #0a2342。
+
+hugoblox:
+  meta:
+    format: "hugoblox-theme@1"
+    name: "UESTC Academic"
+    vendor: "personal"
+    version: "1.0.0"
+    license: "MIT"
+    description: "Academic profile color theme"
+
+  type: "dual"
+
+  light:
+    colors:
+      primary: "#0a2342"   # 主色：深海军蓝
+      secondary: "#c8a45d" # 辅色：低饱和学术金
+      neutral: "#151d2a"   # 正文与标题颜色
+    surfaces:
+      background: "#ffffff" # 页面背景
+      foreground: "#151d2a" # 页面文字
+      header:
+        background: "#06162b" # 顶部导航背景
+        foreground: "#f8fbff" # 顶部导航文字
+      footer:
+        background: "#06162b" # 页脚背景
+        foreground: "#d9e4f0" # 页脚文字
+
+  dark:
+    colors:
+      primary: "#8eb7df"
+      secondary: "#d7b96f"
+      neutral: "#edf3f9"
+    surfaces:
+      background: "#06162b"
+      foreground: "#edf3f9"
+      header:
+        background: "#041120"
+        foreground: "#f8fbff"
+      footer:
+        background: "#041120"
+        foreground: "#d9e4f0"

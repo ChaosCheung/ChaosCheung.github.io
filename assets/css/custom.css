@@ -1,0 +1,436 @@
+:root {
+  --academic-navy-950: #06162b;
+  --academic-navy-900: #0a2342;
+  --academic-navy-800: #12375f;
+  --academic-gold: #c8a45d;
+  --academic-red: #d63c43;
+  --academic-ink: #151d2a;
+  --academic-muted: #5d6878;
+  --academic-line: #d9e0e8;
+  --academic-paper: #ffffff;
+  --academic-paper-soft: #f5f7fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--academic-paper);
+  color: var(--academic-ink);
+  font-family: "Inter", "Noto Sans SC", "Microsoft YaHei", sans-serif;
+}
+
+h1,
+h2,
+h3,
+#research > div > .mb-6,
+#papers > div > .mb-6,
+#projects > div > .mb-6 {
+  font-family: "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, serif;
+  letter-spacing: 0.01em;
+}
+
+/* 深蓝色导航：稳重、简洁，并保留金色学术强调。 */
+#site-header.header {
+  background: rgba(6, 22, 43, 0.96) !important;
+  border-bottom: 1px solid rgba(200, 164, 93, 0.38);
+  box-shadow: 0 8px 28px rgba(4, 16, 31, 0.22);
+  backdrop-filter: blur(14px);
+}
+
+#site-header a,
+#site-header button,
+#site-header svg {
+  color: #f8fbff !important;
+}
+
+#site-header a:hover,
+#site-header a:focus-visible {
+  color: #e6c77f !important;
+}
+
+/* 页面形成深蓝、白色、深蓝、白色的交替节奏。 */
+#about,
+#papers {
+  background:
+    radial-gradient(circle at 88% 12%, rgba(63, 108, 156, 0.34), transparent 32rem),
+    linear-gradient(135deg, var(--academic-navy-950) 0%, var(--academic-navy-900) 58%, #0d2e53 100%);
+  color: #f6f9fd;
+}
+
+/* Reduce the blank space above the homepage profile by approximately half. */
+#about.hbb-section {
+  padding-top: 2rem;
+}
+
+#about .resume-biography {
+  padding-top: clamp(1rem, 3vw, 4rem) !important;
+}
+
+#about::before,
+#papers::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.08;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.18) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: linear-gradient(to bottom, black, transparent 78%);
+}
+
+#research,
+#projects {
+  background:
+    radial-gradient(circle at 10% 20%, rgba(10, 35, 66, 0.045), transparent 28rem),
+    var(--academic-paper);
+  color: var(--academic-ink);
+}
+
+#research .max-w-prose,
+#papers .max-w-prose,
+#projects .max-w-prose {
+  width: 100%;
+  max-width: 72rem;
+}
+
+#research > div > .mb-6,
+#projects > div > .mb-6,
+#papers > div > .mb-6 {
+  position: relative;
+  padding-bottom: 1rem;
+  font-weight: 750;
+  letter-spacing: 0.035em;
+}
+
+#research > div > .mb-6::after,
+#projects > div > .mb-6::after,
+#papers > div > .mb-6::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 3.6rem;
+  height: 2px;
+  background: var(--academic-gold);
+  transform: translateX(-50%);
+}
+
+#papers > div > .mb-6 {
+  color: #ffffff !important;
+}
+
+/* 首屏个人信息。 */
+#about h1,
+#about h2,
+#about h3,
+#about p,
+#about .bio-text,
+#about a {
+  color: #f6f9fd !important;
+}
+
+#about p.text-primary-600 {
+  color: #e3c477 !important;
+}
+
+#about .avatar {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  object-position: center top;
+  border-color: rgba(227, 196, 119, 0.82) !important;
+  box-shadow: 0 22px 55px rgba(0, 0, 0, 0.34);
+}
+
+#about .avatar-wrapper {
+  width: min(360px, 78vw) !important;
+  height: auto !important;
+  aspect-ratio: 3 / 4;
+}
+
+#about .bg-primary-100 {
+  background: rgba(255, 255, 255, 0.09) !important;
+  border: 1px solid rgba(227, 196, 119, 0.36);
+}
+
+#about .text-primary-600 {
+  color: #e3c477 !important;
+}
+
+#about span.inline-block {
+  background: rgba(255, 255, 255, 0.075) !important;
+  border-color: rgba(255, 255, 255, 0.2) !important;
+  color: #edf3fa !important;
+}
+
+/* 研究方向卡片：白底黑字，以细金线和编号增加学术出版物气质。 */
+.research-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.35rem;
+  margin-top: 1.6rem;
+}
+
+.research-card {
+  position: relative;
+  min-height: 13rem;
+  padding: 1.7rem;
+  overflow: hidden;
+  border: 1px solid var(--academic-line);
+  border-top: 3px solid var(--academic-navy-800);
+  border-radius: 0.45rem;
+  background: var(--academic-paper);
+  box-shadow: 0 16px 38px rgba(12, 35, 63, 0.08);
+  transition: transform 180ms ease, box-shadow 180ms ease;
+}
+
+.research-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 20px 44px rgba(12, 35, 63, 0.13);
+}
+
+.research-card h3 {
+  margin: 0.7rem 0 0.55rem;
+  color: var(--academic-navy-900);
+}
+
+.research-card p {
+  color: var(--academic-muted);
+}
+
+.research-index {
+  color: var(--academic-gold);
+  font-family: Georgia, serif;
+  font-size: 1.6rem;
+  font-weight: 800;
+  letter-spacing: 0.14em;
+}
+
+/* 论文区：深蓝底、白字，不再使用等级方块。 */
+.publication-list {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.6rem;
+}
+
+.publication-item {
+  position: relative;
+  padding: 1.45rem 1.65rem 1.45rem 1.9rem;
+  border: 1px solid rgba(221, 233, 245, 0.2);
+  border-left: 3px solid var(--academic-gold);
+  border-radius: 0.4rem;
+  background: rgba(255, 255, 255, 0.065);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.15);
+  transition: background 180ms ease, transform 180ms ease;
+}
+
+.publication-item:hover {
+  background: rgba(255, 255, 255, 0.095);
+  transform: translateX(3px);
+}
+
+#papers .publication-item h3 {
+  margin: 0 0 0.65rem;
+  color: #ffffff !important;
+  line-height: 1.42;
+}
+
+#papers .publication-item p {
+  color: #cbd7e5 !important;
+}
+
+.publication-authors {
+  color: #e0e8f1 !important;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0 0 0.45rem;
+}
+
+#papers .publication-authors .author-self {
+  color: #ffffff !important;
+  font-weight: 800;
+}
+
+#papers .publication-item .publication-venue {
+  color: #b9c8d8 !important;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.paper-rank,
+#papers .publication-item .paper-rank {
+  margin-left: 0.5em;
+  color: var(--academic-gold) !important;
+  font-weight: 850;
+  letter-spacing: 0.025em;
+  white-space: nowrap;
+}
+
+#papers .section-note {
+  color: #9fb1c5 !important;
+  font-size: 0.82rem;
+  margin-top: 1rem;
+}
+
+/* 项目区：纸张白底与深蓝标题，保留基金项目的正式感。 */
+.fund-card {
+  position: relative;
+  padding: 1.9rem 2rem;
+  margin-top: 1.6rem;
+  overflow: hidden;
+  border: 1px solid var(--academic-line);
+  border-left: 5px solid var(--academic-navy-800);
+  border-radius: 0.45rem;
+  background: linear-gradient(135deg, #ffffff, var(--academic-paper-soft));
+  box-shadow: 0 18px 42px rgba(12, 35, 63, 0.09);
+}
+
+.fund-card h3 {
+  margin: 0.65rem 0 0.55rem;
+  color: var(--academic-navy-900);
+}
+
+.fund-card p {
+  color: var(--academic-muted);
+}
+
+.fund-label {
+  position: relative;
+  z-index: 1;
+  color: var(--academic-navy-800);
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+}
+
+.fund-role {
+  color: var(--academic-navy-800) !important;
+  font-weight: 750;
+  margin: 0;
+}
+
+.page-footer {
+  background: var(--academic-navy-950);
+  border-top: 1px solid rgba(200, 164, 93, 0.34);
+  color: #d9e4f0;
+}
+
+.page-footer footer {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  padding-top: 2.75rem;
+  padding-bottom: 2rem;
+  color: #d9e4f0 !important;
+}
+
+.page-footer a {
+  color: #f2d58d !important;
+}
+
+@media (max-width: 820px) {
+  .research-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .research-card {
+    min-height: auto;
+  }
+
+  .publication-item,
+  .fund-card {
+    padding: 1.35rem 1.25rem;
+  }
+}
+
+/* 全站正文基础字号 */
+body {
+  font-size: 26px;
+}
+
+/* 首页姓名 */
+#about h1 {
+  font-size: 3rem !important;
+}
+
+/* 个人简介、研究方向小标题 */
+#about h2,
+#about h3 {
+  font-size: 3rem !important;
+}
+
+/* 个人简介正文 */
+#about .bio-text {
+  font-size: 1.2rem !important;
+  line-height: 1.9;
+}
+
+/* Let the biography use the full width of the right-hand column. */
+#about .prose,
+#about .bio-text {
+  width: 100%;
+  max-width: none !important;
+}
+
+/* 首页各大栏目标题 */
+#research > div > .mb-6,
+#papers > div > .mb-6,
+#projects > div > .mb-6 {
+  font-size: 2.2rem !important;
+}
+
+/* 研究方向卡片标题 */
+.research-card h3 {
+  font-size: 2rem;
+}
+
+/* 研究方向卡片正文 */
+.research-card p {
+  font-size: 1rem;
+  line-height: 1.8;
+}
+
+/* 论文题目 */
+.publication-item h3 {
+  font-size: 1.8rem;
+}
+
+/* 论文作者、期刊、年份 */
+.publication-authors,
+#papers .publication-item .publication-venue {
+  font-size: 1.2rem;
+}
+
+/* 项目第一行：基金发布机构字号 */
+#projects .fund-label {
+  font-size: 1.1rem;
+}
+
+/* 项目第二行：项目名称字号 */
+#projects .fund-card h3 {
+  font-size: 1.8rem;
+}
+
+/* 项目第三行：本人角色字号 */
+#projects .fund-role {
+  font-size: 1.1rem;
+}
+
+/* 职称 */
+#about p.text-primary-600 {
+  font-size: 1.2rem !important;
+}
+
+/* 学院名称 */
+#about p.text-lg {
+  font-size: 1.1rem !important;
+}
+
+/* 研究方向标签 */
+#about span.inline-block {
+  font-size: 1.3rem !important;
+}
